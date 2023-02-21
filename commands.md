@@ -4,6 +4,6 @@ source school-app/bin/activate
 
 cd ~/p
 
-cd ~/school-app
+cd PYTHON/Projects/SchoolAPI
 
 pip install -r requirements.txt
