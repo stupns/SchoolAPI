@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block body %}
+<main>
+    <div class="container my-3">
+        <div class="d-flex">
+            <h1>All Classes</h1>
+
+            <span class="align-self-center ms-3">
+                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                    data-bs-target="#addExamModal">
+                    Add new class
+                </button>
+            </span>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- MODAL HADER -->
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addModalLabel">
+                            Add new subject
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form action="" method="POST">
+                        <!-- MODAL BODY -->
+                        <div class="modal-body">
+<!--                            {{ form.hidden_tag() }}-->
+                            <div class="mb-3">
+<!--                                {{ form.class_name(-->
+<!--                                    class="form-control",-->
+<!--                                    placeholder="Class Name"-->
+<!--                                ) }}-->
+                            </div>
+
+                            <div class="mb-3">
+<!--                                {{ form.student_roll(-->
+<!--                                    class="form-control",-->
+<!--                                    placeholder="Class fields"-->
+<!--                                ) }}-->
+                            </div>
+
+                            <div class="mb-3">
+<!--                                {{ form.class_fields(-->
+<!--                                    class="form-select",-->
+<!--                                    placeholder="class fields"-->
+<!--                                ) }}-->
+                            </div>
+                        </div>
+
+                        <!-- MODAL FOOTER -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">
+                                Close
+                            </button>
+
+<!--                            {{ form.submit(class="btn btn-sm btn-dark") }}-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="table__container mt-5">
+            <h2>All classes</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id_class</th>
+                        <th scope="col">Class_name</th>
+                        <th scope="col">Year_start</th>
+                        <th scope="col">Year_finish</th>
+                        <th scope="col">Teacher_name</th>
+                        <th scope="col">Class_student</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!--                    {% for class in classes %}-->
+                    <tr>
+<!--                        <td>{{ class.args }}</td>-->
+                        <td>
+<!--                            <form action="{{ url_for('class.class_edit', class_id=class.id) }}" method="POST">-->
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    Edit
+                                </button>
+                            </form>
+                        </td>
+
+                        <td>
+<!--                            <form action="{{ url_for('class.class_delete', class_id=class.id) }}" method="POST">-->
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+<!--                    {% endfor %}-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
